@@ -1,0 +1,12 @@
+body {
+  width: 100% !important;
+  margin: 0 !important;
+  font-size: .875rem !important;
+  font-family: Helvetica Neue, Helvetica, Arial;
+}
+
+.navbar-top {
+  background-color: #ff383f ;
+  height: 2.125rem;
+
+}
