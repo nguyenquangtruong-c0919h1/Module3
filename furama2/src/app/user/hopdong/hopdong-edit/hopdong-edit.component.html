@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center namehead">CHỈNH SỬA HỢP ĐỒNG</div>
+
+<div class="container-fluid">
+    <form style="font-weight: bolder;" [formGroup]="formEditNewHopDong">
+        <div class="row form-group" style="height: 80px">
+            <div class="col-md-6">
+                <label>Ngày làm hợp đồng</label>
+                <mat-form-field style="position:absolute;left: 0px; top:6px">
+                    <input matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="startHopDong">
+                    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #myDatepicker></mat-datepicker>
+                    <p *ngIf="formEditNewHopDong.controls.startHopDong.errors?.required && formEditNewHopDong.controls.startHopDong.touched"
+                        class="text-danger warning">Vui lòng nhập ngày bắt đầu</p>
+                </mat-form-field>
+            </div>
+            <div class=col-md-6>
+                <label>Ngày kết thúc</label>
+                <mat-form-field style="position:absolute;left: 0px; top:6px">
+                    <input matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="endHopDong">
+                    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #myDatepicker></mat-datepicker>
+                    <p *ngIf="formEditNewHopDong.controls.endHopDong.errors?.required && formEditNewHopDong.controls.endHopDong.touched"
+                        class="text-danger warning">Vui lòng nhập ngày kết thúc</p>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row form-group" style="height: 80px">
+            <div class=col-md-6>
+                <label>Tiền đặt cọc</label>
+                <input type="number" class="form-control" formControlName="electronicMoney">
+                <p *ngIf="formEditNewHopDong.controls.electronicMoney.errors?.required && formEditNewHopDong.controls.electronicMoney.touched"
+                    class="text-danger warning">Vui lòng nhập Tiền đặt cọc</p>
+                <p *ngIf="formEditNewHopDong.controls.electronicMoney.errors?.pattern && formEditNewHopDong.controls.electronicMoney.touched"
+                    class="text-danger warning">Vui lòng nhập Tiền đặt cọc lớn hơn 0</p>
+            </div>
+            <div class="col-md-6">
+                <label>Tổng tiền</label>
+                <input type="number" class="form-control" formControlName="totalMoney">
+                <p *ngIf="formEditNewHopDong.controls.totalMoney.errors?.required && formEditNewHopDong.controls.totalMoney.touched"
+                    class="text-danger warning">Vui lòng nhập Tổng tiền</p>
+                <p *ngIf="formEditNewHopDong.controls.totalMoney.errors?.pattern && formEditNewHopDong.controls.totalMoney.touched"
+                    class="text-danger warning">Tổng tiền phải là số dương</p>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center aligin-item-center d-lfex-collumn">
+            <button [disabled]="formEditNewHopDong.invalid" type="submit" class="btn btn-info " (click)="editHopDong()">Sửa</button>
+        </div>
+    </form>
+</div>

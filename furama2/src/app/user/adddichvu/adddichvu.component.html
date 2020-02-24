@@ -1,0 +1,65 @@
+<div class="d-flex justify-content-center namehead">THÊM DỊCH VỤ</div>
+
+<div class="container-fluid">
+  <form style="font-weight: bolder;" [formGroup]="formAddNewService">
+    <div class="row form-group" style="height: 80px">
+      <div class=col-md-6>
+        <label for="exampleInputEmail1">Tên dịch vụ</label>
+        <input class="form-control" formControlName="nameService">
+        <p *ngIf="formAddNewService.controls.nameService.errors?.required && formAddNewService.controls.nameService.touched"
+          class="text-danger warning">Vui lòng nhập tên</p>
+
+      </div>
+      <div class="col-md-6">
+        <label>Diện tích</label>
+        <input type="number" class="form-control" formControlName="area">
+        <p *ngIf="formAddNewService.controls.area.errors?.required && formAddNewService.controls.area.touched"
+          class="text-danger warning">Vui lòng nhập Diện tích</p>
+        <p *ngIf="formAddNewService.controls.area.errors?.pattern && formAddNewService.controls.area.touched"
+          class="text-danger warning">Vui lòng nhập Diện tích lớn hơn 0</p>
+      </div>
+
+    </div>
+    <div class="row form-group" style="height: 80px">
+      <div class=col-md-6>
+        <label>Số tầng</label>
+        <input type="number" class="form-control" formControlName="numberFloor">
+        <p *ngIf="formAddNewService.controls.numberFloor.errors?.required && formAddNewService.controls.numberFloor.touched"
+          class="text-danger warning">Vui lòng nhập số tầng</p>
+        <p *ngIf="formAddNewService.controls.numberFloor.errors?.pattern && formAddNewService.controls.numberFloor.touched"
+          class="text-danger warning">Vui lòng nhập Số tầng lớn hơn 0</p>
+
+      </div>
+      <div class="col-md-6">
+        <label>Số người tối đa</label>
+        <input type="number" class="form-control" formControlName="maxPeople">
+        <p *ngIf="formAddNewService.controls.maxPeople.errors?.required && formAddNewService.controls.maxPeople.touched"
+          class="text-danger warning">Vui lòng nhập số người tối đa</p>
+        <p *ngIf="formAddNewService.controls.maxPeople.errors?.pattern && formAddNewService.controls.maxPeople.touched"
+          class="text-danger warning">Vui lòng nhập Số người tối đa lớn hơn 0</p>
+
+      </div>
+    </div>
+    <div class="row form-group" style="height: 80px">
+      <div class=col-md-6>
+        <label>Chi phí thuê</label>
+        <input type="number" class="form-control" formControlName="rentalCosts">
+        <p *ngIf="formAddNewService.controls.rentalCosts.errors?.required && formAddNewService.controls.rentalCosts.touched"
+          class="text-danger warning">Vui lòng nhập Chi phí thuê</p>
+        <p *ngIf="formAddNewService.controls.rentalCosts.errors?.pattern && formAddNewService.controls.rentalCosts.touched"
+          class="text-danger warning">Vui lòng nhập Chi phí thuê lớn hơn 0</p>
+      </div>
+      <div class="col-md-6">
+        <label>Trạng thái</label>
+        <input type="text" class="form-control" formControlName="status">
+        <p *ngIf="formAddNewService.controls.status.errors?.required && formAddNewService.controls.status.touched"
+          class="text-danger warning">Vui lòng nhập trạng thái</p>
+
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-center aligin-item-center d-lfex-collumn">
+      <button [disabled]="formAddNewService.invalid" type="submit" class="btn btn-info " (click)="addNewService()">Thêm</button>
+    </div>
+  </form>
+</div>

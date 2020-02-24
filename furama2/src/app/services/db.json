@@ -1,0 +1,150 @@
+{
+  "employee": [
+    {
+      "name": "Nguyễn Văn Quốc",
+      "idRole": "Giám đốc",
+      "idSkill": "12/12",
+      "idDepart": "Phòng 2",
+      "dateOfBirth": "1998-02-02T17:00:00.000Z",
+      "idCard": "123456789",
+      "salary": "30000000",
+      "phoneNumber": "0565987789",
+      "email": "vannam123@gmail.com",
+      "address": "Quảng Nam",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Trần Trung Thành",
+      "idRole": "Quảng lý",
+      "idSkill": "Trung cấp",
+      "idDepart": "Phòng 3",
+      "dateOfBirth": "11/11/1989",
+      "idCard": "123456789",
+      "salary": "25000000",
+      "phoneNumber": "0989888888",
+      "email": "trungthanh132@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 4,
+      "name": "Nguyen Trình Độ",
+      "idRole": "Nhân viên",
+      "idSkill": "Thạc Sỹ",
+      "idDepart": "Phòng 4",
+      "dateOfBirth": "11/11/1991",
+      "idCard": "123456789",
+      "salary": "10000000",
+      "phoneNumber": "090999999",
+      "email": "trinhdoc121@gmail.com",
+      "address": "Quảng Ngãi"
+    },
+    {
+      "name": "Nguyễn Quang Trường",
+      "idRole": "Tổng giám đôc",
+      "idSkill": "12/12",
+      "idDepart": "quét rác",
+      "dateOfBirth": "1996-11-12T17:00:00.000Z",
+      "idCard": 194554865,
+      "salary": 39000000,
+      "phoneNumber": "0963547696",
+      "email": "quangtruong@gmail.com",
+      "address": "quang bình",
+      "id": 5
+    }
+  ],
+  "customer": [
+    {
+      "type": "Vip",
+      "name": "Trương Anh Tuấn",
+      "dateOfBirth": "2020-02-14T17:00:00.000Z",
+      "idCard": "124312412",
+      "phoneNumber": "0124323423",
+      "email": "anhtai@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "type": "Normar",
+      "name": "Nguyễn Thị Nữ",
+      "dateOfBirth": "11/11/1998",
+      "idCard": "546547456",
+      "phoneNumber": "0987689734",
+      "email": "thinu123@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 3,
+      "type": "Normar",
+      "name": "Nguyễn Văn A",
+      "dateOfBirth": "11/11/1991",
+      "idCard": "123456789",
+      "phoneNumber": "090999999",
+      "email": "anha123@gmail.com",
+      "address": "Hà Nội"
+    },
+    {
+      "type": "Vip",
+      "name": "Nguyễn Quang Trường",
+      "dateOfBirth": "2020-02-14",
+      "idCard": 194551865,
+      "phoneNumber": "0565079367",
+      "email": "quangtruong0412@gmail.com",
+      "address": "Quảng bình",
+      "id": 6
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "nameService": "Villa",
+      "area": "500",
+      "numberFloor": "5",
+      "maxPeople": "10",
+      "rentalCosts": "1000$",
+      "status": "Chưa thuê"
+    },
+    {
+      "id": 2,
+      "nameService": "House",
+      "area": "300",
+      "numberFloor": "3",
+      "maxPeople": "6",
+      "rentalCosts": "500",
+      "status": "Chưa thuê"
+    },
+    {
+      "nameService": "Room",
+      "area": "100",
+      "numberFloor": 3,
+      "maxPeople": "4",
+      "rentalCosts": "300",
+      "status": "Chưa thuê",
+      "id": 3
+    }
+  ],
+  "hopdong": [
+    {
+      "id": 3,
+      "startHopDong": "2020-02-14T17:00:00.000Z",
+      "endHopDong": "2020-02-14T17:00:00.000Z",
+      "electronicMoney": "300",
+      "totalMoney": "3000"
+    },
+    {
+      "startHopDong": "2020-02-14T17:00:00.000Z",
+      "endHopDong": "2020-02-14T17:00:00.000Z",
+      "electronicMoney": "100",
+      "totalMoney": "2500",
+      "id": 4
+    },
+    {
+      "startHopDong": "2020-02-14T17:00:00.000Z",
+      "endHopDong": "2020-02-11T17:00:00.000Z",
+      "electronicMoney": 2,
+      "totalMoney": 123,
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<div class="d-flex justify-content-center namehead">THÊM NHÂN VIÊN</div>
+
+<div class="container-fluid">
+  <form [formGroup]="formAddNewEmployee">
+    <div class="row form-group">
+      <div class=col-md-8 style="height: 80px">
+        <label for="exampleInputEmail1">Họ và tên</label>
+        <input class="form-control" formControlName="name">
+        <p *ngIf="formAddNewEmployee.controls.name.errors?.required && formAddNewEmployee.controls.name.touched"
+        class="text-danger warning">Vui lòng nhập họ tên</p>
+      </div>
+      <div class="col-md-4" style="height: 80px">
+        <label>Ngày sinh</label>
+        <mat-form-field style="position:absolute;left: 0px; top:15px">
+          <input [min]="minDate" [max]="maxDate" matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+
+        <p *ngIf="formAddNewEmployee.controls.dateOfBirth.errors?.required && formAddNewEmployee.controls.dateOfBirth.touched"
+        class="text-danger warning">Vui lòng nhập ngày sinh</p>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row form-group" style="height: 80px">
+      <div class=col-md-4>
+        <label>Số Chứng minh nhân dân</label>
+        <input type="number" class="form-control" formControlName="idCard">
+        <p *ngIf="formAddNewEmployee.controls.idCard.errors?.required && formAddNewEmployee.controls.idCard.touched"
+        class="text-danger warning">Vui lòng nhập số Chứng minh nhân dân</p>
+        <p *ngIf="formAddNewEmployee.controls.idCard.errors?.pattern && formAddNewEmployee.controls.idCard.touched"
+        class="text-danger warning">Vui lòng nhập đúng định dạng</p>
+      </div>
+      <div class="col-md-4">
+        <label>Số điện thoại</label>
+        <input type="text" class="form-control" formControlName="phoneNumber">
+        <p *ngIf="formAddNewEmployee.controls.phoneNumber.errors?.required && formAddNewEmployee.controls.phoneNumber.touched"
+        class="text-danger warning">Vui lòng nhập Số điện thoại</p>
+        <p *ngIf="formAddNewEmployee.controls.phoneNumber.errors?.pattern&& formAddNewEmployee.controls.phoneNumber.touched"
+        class="text-danger warning">Vui lòng nhập đúng định dạng</p>
+      </div>
+      <div class="col-md-4" style="height: 80px">
+        <label>Lương</label>
+        <input type="number" class="form-control" formControlName="salary">
+        <p *ngIf="formAddNewEmployee.controls.salary.errors?.required && formAddNewEmployee.controls.salary.touched"
+        class="text-danger warning">Vui lòng nhập lương</p>
+        <p *ngIf="formAddNewEmployee.controls.salary.errors?.pattern && formAddNewEmployee.controls.salary.touched"
+        class="text-danger warning">Vui lòng nhập Lương lớn hơn 0</p>
+      </div>
+    </div>
+    <div class="row form-group" style="height: 80px">
+      <div class=col-md-6>
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email">
+        <p *ngIf="formAddNewEmployee.controls.email.errors?.required && formAddNewEmployee.controls.email.touched"
+        class="text-danger warning">Vui lòng nhập Email</p>
+        <p *ngIf="formAddNewEmployee.controls.email.errors?.email && formAddNewEmployee.controls.email.touched"
+        class="text-danger warning">Vui lòng nhập đúng định dạng</p>
+      </div>
+      <div class="col-md-6">
+        <label>Địa chỉ</label>
+        <input type="text" class="form-control" formControlName="address">
+        <p *ngIf="formAddNewEmployee.controls.address.errors?.required && formAddNewEmployee.controls.address.touched"
+        class="text-danger warning">Vui lòng nhập Địa chỉ</p>
+      </div>
+    </div>
+
+    <div class="form-group" style="height: 80px">
+      <div class="row">
+        <div class="col-md-4">
+          <label>Vị trí</label>
+          <input type="text" class="form-control" formControlName="idRole">
+          <p *ngIf="formAddNewEmployee.controls.idRole.errors?.required && formAddNewEmployee.controls.idRole.touched"
+        class="text-danger warning">Vui lòng nhập Vị trí</p>
+        </div>
+        <div class="col-md-4">
+          <label>Trình độ</label>
+          <input type="text" class="form-control" formControlName="idSkill">
+          <p *ngIf="formAddNewEmployee.controls.idSkill.errors?.required && formAddNewEmployee.controls.idSkill.touched"
+        class="text-danger warning">Vui lòng nhập Trình độ</p>
+        </div>
+        <div class="col-md-4  ">
+          <label>Chức vụ</label>
+          <input type="text" class="form-control" formControlName="idDepart">
+          <p *ngIf="formAddNewEmployee.controls.idDepart.errors?.required && formAddNewEmployee.controls.idDepart.touched"
+        class="text-danger warning">Vui lòng nhập Chức vụ</p>
+        </div>
+      </div>
+      <br>
+     
+    </div>
+    <div class="d-flex justify-content-center aligin-item-center d-lfex-collumn">
+      <button  [disabled]="formAddNewEmployee.invalid" type="submit" class="btn btn-info" (click)="addNewEmployee()">Thêm</button>
+    </div>
+  </form>
+</div>

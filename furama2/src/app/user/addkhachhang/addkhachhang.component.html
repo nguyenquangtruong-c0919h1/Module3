@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-center namehead">THÊM KHÁCH HÀNG</div>
+
+<div class="container-fluid">
+  <form [formGroup]="formAddNewCustomer">
+    <div class="row form-group">
+      <div class="col-md-6" style="height: 80px">
+        <label for="exampleInputEmail1">Họ và tên</label>
+        <input class="form-control" formControlName="name">
+        <p *ngIf="formAddNewCustomer.controls.name.errors?.required && formAddNewCustomer.controls.name.touched"
+          class="text-danger warning">Vui lòng nhập họ tên</p>
+
+      </div>
+      <div class="col-md-3" style="height: 80px">
+        <label>Khách Hàng</label>
+        <input type="text" class="form-control" formControlName="type">
+        <p *ngIf="formAddNewCustomer.controls.type.errors?.required && formAddNewCustomer.controls.type.touched"
+          class="text-danger warning">Vui lòng nhập khách hàng</p>
+
+      </div>
+      <div class="col-md-3" style="height: 80px;position: relative;">
+        <label>Ngày sinh</label>
+        <mat-form-field style="position:absolute;left: 0px; top:15px">
+          <input [min]="minDate" [max]="maxDate" matInput [matDatepicker]="myDatepicker" class="form-control"
+            formControlName="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+
+          <p *ngIf="formAddNewCustomer.controls.dateOfBirth.errors?.required && formAddNewCustomer.controls.dateOfBirth.touched"
+            class="text-danger warning" style="position: absolute; top:60px;font-weight: bolder;">Vui lòng nhập ngày
+            sinh</p>
+
+        </mat-form-field>
+
+
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class=col-md-6 style="height: 80px">
+        <label>Số Chứng minh nhân dân</label>
+        <input type="number" class="form-control" formControlName="idCard">
+        <p *ngIf="formAddNewCustomer.controls.idCard.errors?.required && formAddNewCustomer.controls.idCard.touched"
+          class="text-danger warning">Vui lòng nhập số chứng minh nhân dân</p>
+        <p *ngIf="formAddNewCustomer.controls.idCard.errors?.pattern && formAddNewCustomer.controls.idCard.touched"
+          class="text-danger warning">Số chứng minh thư phải có 9 chữ số</p>
+
+      </div>
+      <div class="col-md-6" style="height: 80px">
+        <label>Số điện thoại</label>
+        <input type="text" class="form-control" formControlName="phoneNumber">
+        <p *ngIf="formAddNewCustomer.controls.phoneNumber.errors?.required && formAddNewCustomer.controls.phoneNumber.touched"
+          class="text-danger warning">Vui lòng nhập số điện thoại</p>
+        <p *ngIf="formAddNewCustomer.controls.phoneNumber.errors?.pattern && formAddNewCustomer.controls.phoneNumber.touched"
+          class="text-danger warning">Số điện thoại phải đúng định dạng</p>
+
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-6" style="height: 80px">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email">
+        <p *ngIf="formAddNewCustomer.controls.email.errors?.required && formAddNewCustomer.controls.email.touched"
+          class="text-danger warning">Vui lòng nhập email</p>
+        <p *ngIf="formAddNewCustomer.controls.email.errors?.email && formAddNewCustomer.controls.email.touched"
+          class="text-danger warning">Vui lòng nhập đúng định dạng</p>
+
+      </div>
+      <div class="col-md-6" style="height: 80px">
+        <label>Địa chỉ</label>
+        <input type="text" class="form-control" formControlName="address">
+        <p *ngIf="formAddNewCustomer.controls.address.errors?.required && formAddNewCustomer.controls.address.touched"
+          class="text-danger warning">Vui lòng nhập địa chỉ</p>
+
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-center aligin-item-center d-lfex-collumn">
+      <button [disabled]="formAddNewCustomer.invalid" type="submit" class="btn btn-info " (click)="addNewCustomer()">Thêm</button>
+    </div>
+  </form>
+</div>
